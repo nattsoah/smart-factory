@@ -93,21 +93,16 @@ const Sparkline = ({ color = "primary" }: { color?: "primary" | "success" | "err
 
 const MainChart = () => {
   const chartData = [
-    { time: "08:00 AM", actual: 65, target: 80 },
-    { time: "09:00 AM", actual: 45, target: 70 },
-    { time: "10:00 AM", actual: 75, target: 85 },
-    { time: "11:00 AM", actual: 55, target: 75 },
-    { time: "12:00 PM", actual: 90, target: 90 },
-    { time: "01:00 PM", actual: 70, target: 80 },
-    { time: "02:00 PM", actual: 85, target: 85 },
-    { time: "03:00 PM", actual: 60, target: 75 },
-    { time: "04:00 PM", actual: 95, target: 95 },
-    { time: "05:00 PM", actual: 80, target: 85 },
+    { time: "08:00 AM", actual: 25, target: 30 },
+    { time: "10:00 AM", actual: 25, target: 15 },
+    { time: "12:00 PM", actual: 70, target: 20 },
+    { time: "02:00 PM", actual: 35, target: 55 },
+    { time: "04:00 PM", actual: 15, target: 45 },
   ];
 
   return (
     <div className="space-y-4">
-      <div className="h-64 w-full relative flex items-end gap-3 pt-4 px-2">
+      <div className="h-64 w-full relative flex items-end gap-6 pt-4 px-4">
         {/* Grid Lines */}
         <div className="absolute inset-0 flex flex-col justify-between border-b border-l border-neutral-200 pointer-events-none mb-0">
           {[1, 2, 3, 4, 5].map((i) => (
@@ -117,13 +112,13 @@ const MainChart = () => {
         
         {/* Paired Bars */}
         {chartData.map((data, i) => (
-          <div key={i} className="flex-1 flex items-end gap-1 h-full relative z-10">
+          <div key={i} className="flex-1 flex items-end gap-1.5 h-full relative z-10">
             <div 
-              className="bg-primary-500 w-full rounded-t-[1px] transition-all hover:bg-primary-600" 
+              className="bg-primary-100 w-full rounded-t-[1px] transition-all hover:bg-neutral-800" 
               style={{ height: `${data.actual}%` }}
             />
             <div 
-              className="bg-primary-100 w-full rounded-t-[1px] transition-all" 
+              className="bg-neutral-900 w-full rounded-t-[1px] transition-all" 
               style={{ height: `${data.target}%` }}
             />
           </div>
@@ -131,11 +126,11 @@ const MainChart = () => {
       </div>
       
       {/* X-Axis Labels */}
-      <div className="flex justify-between px-2 pl-8">
+      <div className="flex justify-between px-4 pl-10">
         {chartData.map((data, i) => (
           <div key={i} className="flex-1 text-center">
-            <span className="text-[9px] font-bold text-neutral-400 uppercase tracking-tighter">
-              {data.time.split(' ')[0]}
+            <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-tight">
+              {data.time}
             </span>
           </div>
         ))}
@@ -184,8 +179,8 @@ export default function DashboardPage() {
           <p className="text-neutral-500 text-sm">Industrial metrics and real-time asset monitoring.</p>
         </div>
         <div className="flex items-center gap-3">
-          <DatePicker className="w-[180px] bg-neutral-0" />
-          <Button variant="outline" size="sm" className="bg-neutral-0">
+          <DatePicker className="w-[180px] bg-neutral-0 h-10" />
+          <Button variant="outline" size="md" className="bg-neutral-0 h-10 px-6">
             <DownloadIcon />
             <span>Export Report</span>
           </Button>
@@ -253,11 +248,11 @@ export default function DashboardPage() {
             <MainChart />
             <div className="mt-6 flex items-center justify-center gap-8 border-t border-neutral-100 pt-4">
               <div className="flex items-center gap-2">
-                <div className="h-2.5 w-2.5 rounded-sm bg-primary-500" />
+                <div className="h-2.5 w-2.5 rounded-sm bg-primary-100" />
                 <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest">Actual Output</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="h-2.5 w-2.5 rounded-sm bg-primary-100" />
+                <div className="h-2.5 w-2.5 rounded-sm bg-neutral-900" />
                 <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest">Target Output</span>
               </div>
             </div>
@@ -387,9 +382,9 @@ export default function DashboardPage() {
         </div>
 
         {/* Minimal Footer (No Pagination) */}
-        <div className="p-4 border-t border-neutral-200 bg-neutral-0 flex items-center justify-center">
+        <div className="p-4 border-t border-neutral-200 bg-neutral-0 flex items-center justify-start">
           <div className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest">
-            End of Asset List • Total Assets: <span className="text-neutral-900">{factoryData.length}</span>
+            Total Assets: <span className="text-neutral-900">{factoryData.length}</span>
           </div>
         </div>
       </Card>
