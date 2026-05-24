@@ -8,7 +8,7 @@ import React from "react";
  */
 export default function UIConfigPage() {
   return (
-    <main className="min-h-screen p-8 lg:p-16 max-w-7xl mx-auto space-y-16 bg-neutral-0 text-neutral-900">
+    <div className="p-8 lg:p-16 space-y-16 bg-neutral-0 text-neutral-900">
       <header className="space-y-4 border-b border-neutral-200 pb-8">
         <h1 className="text-4xl font-bold">Smart Factory UI System</h1>
         <p className="text-lg text-neutral-500">Theme Verification (v1.5 - Pure Architecture)</p>
@@ -145,6 +145,6 @@ export default function UIConfigPage() {
       <footer className="pt-16 text-center text-neutral-400 text-sm border-t border-neutral-100 pb-8">
         Smart Factory Design System - Theme Verification v1.5
       </footer>
-    </main>
+    </div>
   );
 }
