@@ -31,17 +31,24 @@ const UserIcon = () => (
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-30 h-16 w-full bg-neutral-0 border-b border-neutral-200 flex items-center justify-between px-8 backdrop-blur-md bg-opacity-95">
-      {/* Left: Global Search */}
-      <div className="flex-1 max-w-md text-neutral-700 focus-within:text-neutral-900 transition-colors">
-        <SearchInput 
-          placeholder="Search systems, assets, or logs..." 
-          className="h-10 bg-neutral-50 border-neutral-200 text-neutral-700 focus:text-neutral-900 placeholder:text-neutral-400"
-        />
+    <header className="sticky top-0 z-30 h-16 w-full bg-neutral-0 border-b border-neutral-200 flex items-center justify-between px-4 md:px-8 backdrop-blur-md bg-opacity-95">
+      {/* Left: Global Search & Mobile Toggle */}
+      <div className="flex items-center gap-4 flex-1 max-w-xl">
+        <Button variant="ghost" size="icon" className="lg:hidden text-neutral-700">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </Button>
+        <div className="flex-1 text-neutral-700 focus-within:text-neutral-900 transition-colors">
+          <SearchInput 
+            placeholder="Search..." 
+            className="h-10 bg-neutral-50 border-neutral-200 text-neutral-700 focus:text-neutral-900 placeholder:text-neutral-400 w-full"
+          />
+        </div>
       </div>
 
       {/* Right: Actions & Profile */}
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-3 md:gap-6">
         {/* Global Icons */}
         <div className="flex items-center gap-1">
           <div className="relative">
@@ -50,20 +57,20 @@ export function Navbar() {
             </Button>
             <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-error-500 rounded-full border-2 border-neutral-0" />
           </div>
-          <Button variant="ghost" size="icon" className="text-neutral-700 hover:text-neutral-900 transition-colors">
+          <Button variant="ghost" size="icon" className="hidden sm:flex text-neutral-700 hover:text-neutral-900 transition-colors">
             <StatusIcon />
           </Button>
         </div>
 
         {/* Vertical Divider */}
-        <div className="h-8 w-px bg-neutral-200" />
+        <div className="h-8 w-px bg-neutral-200 hidden sm:block" />
 
         {/* Simplified Admin Profile */}
         <div className="flex items-center gap-3 pl-1 group cursor-pointer">
           <div className="w-9 h-9 rounded-full bg-neutral-800 flex items-center justify-center text-neutral-0 shadow-sm border border-neutral-700 group-hover:bg-neutral-900 transition-colors">
             <UserIcon />
           </div>
-          <span className="text-sm font-bold text-neutral-700 group-hover:text-neutral-900 transition-colors tracking-tight">
+          <span className="hidden md:block text-sm font-bold text-neutral-700 group-hover:text-neutral-900 transition-colors tracking-tight">
             Ops Admin
           </span>
         </div>

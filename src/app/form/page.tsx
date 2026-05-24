@@ -135,10 +135,10 @@ export default function MachineFormEntry() {
       </div>
 
       {/* Footer Actions: Using only built-in Button components */}
-      <div className="fixed bottom-0 left-0 right-0 h-20 bg-neutral-0 border-t border-neutral-200 flex items-center justify-end px-12 z-40 ml-[280px]">
-        <div className="flex gap-4">
-          <Button variant="outline" onClick={() => router.push("/assets")}>Cancel</Button>
-          <Button variant="primary" className="px-12 font-bold shadow-lg">Save Asset</Button>
+      <div className="fixed bottom-0 left-0 right-0 h-20 bg-neutral-0 border-t border-neutral-200 flex items-center justify-end px-4 md:px-12 z-40 lg:ml-[280px]">
+        <div className="flex gap-4 w-full sm:w-auto">
+          <Button variant="outline" className="flex-1 sm:flex-none" onClick={() => router.push("/assets")}>Cancel</Button>
+          <Button variant="primary" className="flex-1 sm:flex-none px-12 font-bold shadow-lg">Save Asset</Button>
         </div>
       </div>
     </div>

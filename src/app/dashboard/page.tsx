@@ -171,16 +171,16 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="p-6 lg:p-8 space-y-8 min-h-screen bg-neutral-100">
+    <div className="p-4 md:p-8 space-y-8 min-h-screen bg-neutral-100">
       {/* 1. Page Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:items-start lg:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-neutral-900 tracking-tight">Dashboard Overview</h1>
           <p className="text-neutral-500 text-sm">Industrial metrics and real-time asset monitoring.</p>
         </div>
-        <div className="flex items-center gap-3">
-          <DatePicker className="w-[180px] bg-neutral-0 h-10" />
-          <Button variant="outline" size="md" className="bg-neutral-0 h-10 px-6">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
+          <DatePicker className="w-full sm:w-[180px] bg-neutral-0 h-10" />
+          <Button variant="outline" size="md" className="bg-neutral-0 h-10 px-6 w-full sm:w-auto">
             <DownloadIcon />
             <span>Export Report</span>
           </Button>
@@ -299,24 +299,24 @@ export default function DashboardPage() {
       {/* 5. Data Table Section */}
       <Card className="rounded-xl border-neutral-200 shadow-sm overflow-hidden">
         {/* Table Filters */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-neutral-0 p-4 border-b border-neutral-200">
-          <div className="flex flex-1 items-center gap-3">
-            <SearchInput placeholder="Filter assets..." className="max-w-xs h-9" />
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-neutral-0 p-4 border-b border-neutral-200">
+          <div className="flex flex-col md:flex-row flex-1 md:items-center gap-3">
+            <SearchInput placeholder="Filter assets..." className="w-full md:max-w-xs h-9" />
             <div className="h-6 w-px bg-neutral-200 hidden md:block" />
-            <div className="flex items-center gap-2">
-              <Select className="w-32 h-9 text-xs">
+            <div className="flex flex-wrap items-center gap-2">
+              <Select className="flex-1 md:w-32 h-9 text-xs">
                 <option value="">Status</option>
                 <option value="operational">Operational</option>
                 <option value="maintenance">Maintenance</option>
               </Select>
-              <Select className="w-32 h-9 text-xs">
+              <Select className="flex-1 md:w-32 h-9 text-xs">
                 <option value="">Floor</option>
                 <option value="1">Floor 1</option>
                 <option value="2">Floor 2</option>
               </Select>
             </div>
           </div>
-          <Button variant="outline" size="sm" className="h-9">
+          <Button variant="outline" size="sm" className="w-full lg:w-auto h-9">
             <DownloadIcon />
             <span>Export Table</span>
           </Button>

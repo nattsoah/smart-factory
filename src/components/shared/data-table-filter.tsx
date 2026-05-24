@@ -22,33 +22,33 @@ interface DataTableFilterProps {
 export function DataTableFilter({ placeholder = "Search assets...", onSearch, onExport }: DataTableFilterProps) {
   return (
     <Card className="rounded-xl border-neutral-200 shadow-sm overflow-hidden">
-      <div className="p-4 flex flex-col md:flex-row md:items-center justify-between gap-4 bg-neutral-0">
-        <div className="flex flex-1 items-center gap-3">
+      <div className="p-4 flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-neutral-0">
+        <div className="flex flex-col md:flex-row flex-1 md:items-center gap-3">
           <SearchInput 
             placeholder={placeholder} 
-            className="max-w-xs" 
+            className="w-full md:max-w-xs" 
             onChange={(e) => onSearch?.(e.target.value)}
           />
           <div className="h-8 w-px bg-neutral-200 hidden md:block" />
-          <div className="flex items-center gap-2">
-            <Select className="w-32 h-9 text-xs">
+          <div className="flex flex-wrap items-center gap-2">
+            <Select className="flex-1 md:w-32 h-9 text-xs">
               <option value="">Status</option>
               <option value="operational">Operational</option>
               <option value="maintenance">Maintenance</option>
             </Select>
-            <Select className="w-32 h-9 text-xs">
+            <Select className="flex-1 md:w-32 h-9 text-xs">
               <option value="">Floor</option>
               <option value="a">Floor A</option>
               <option value="w">Floor W</option>
             </Select>
-            <Select className="w-32 h-9 text-xs">
+            <Select className="flex-1 md:w-32 h-9 text-xs">
               <option value="">Type</option>
               <option value="cnc">CNC</option>
               <option value="robot">Robot</option>
             </Select>
           </div>
         </div>
-        <Button variant="outline" size="sm" className="h-9 font-semibold" onClick={onExport}>
+        <Button variant="outline" size="sm" className="w-full lg:w-auto h-9 font-semibold" onClick={onExport}>
           <DownloadIcon />
           <span className="ml-2">Export</span>
         </Button>

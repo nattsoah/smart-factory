@@ -123,7 +123,7 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-[280px] bg-neutral-50 border-r border-neutral-200 flex flex-col z-40">
+    <aside className="fixed left-0 top-0 h-screen w-[280px] bg-neutral-50 border-r border-neutral-200 flex flex-col z-50 -translate-x-full lg:translate-x-0 transition-transform duration-300">
       {/* Brand Header */}
       <div className="p-6 flex flex-col gap-1 border-b border-neutral-100">
         <span className="text-xl font-bold text-neutral-900 mb-1">

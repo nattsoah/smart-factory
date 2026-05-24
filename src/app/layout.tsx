@@ -31,7 +31,7 @@ export default function RootLayout({
     >
       <body className="min-h-full bg-neutral-100">
         <Sidebar />
-        <main className="pl-[280px]">
+        <main className="lg:pl-[280px]">
           <Navbar />
           {children}
         </main>

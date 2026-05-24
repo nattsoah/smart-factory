@@ -25,8 +25,8 @@ export function PageHeader({ breadcrumbItems, title, description, action }: Page
           <p className="text-sm text-neutral-500 leading-tight">{description}</p>
         </div>
         {action && (
-          <div className="flex items-center">
-            <Button variant="primary" size="md" onClick={action.onClick} className="h-full min-h-[44px] font-bold px-6 py-0">
+          <div className="flex items-center w-full md:w-auto">
+            <Button variant="primary" size="md" onClick={action.onClick} className="w-full md:w-auto min-h-[44px] font-bold px-6 py-0">
               {action.icon}
               <span className="ml-2">{action.label}</span>
             </Button>

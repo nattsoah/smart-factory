@@ -34,7 +34,7 @@ export default function MachineInventoryPage() {
   ];
 
   return (
-    <div className="p-8 space-y-6 bg-neutral-50 min-h-screen">
+    <div className="p-4 md:p-8 space-y-6 bg-neutral-50 min-h-screen">
       {/* Page Header: Using variant 'secondary' for the brand's primary Blue color */}
       <PageHeader
         breadcrumbItems={breadcrumbItems}
