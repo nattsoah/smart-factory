@@ -1,27 +1,38 @@
-# Project Mandates: Smart Factory UI Generation
+# Smart Factory UI System: Foundation & Mandates
 
-All UI generation tasks in this repository MUST follow the strict **Design-to-Code** workflow.
+All UI generation in this project MUST adhere to this document.
 
-## 🔄 The 2-Step Workflow
+## 📁 Project Structure
+- `src/app/`: App Router pages and layouts.
+- `src/components/ui/`: Atomic, reusable components (Buttons, Inputs, etc.).
+- `src/components/shared/`: Composed UI sections (Tables, Form Groups).
+- `src/components/layout/`: Global layout elements (Sidebar, Navbar).
+- `design/assets/`: Icons and brand images.
 
-### 1. `structure-inputs`
-Before implementing, silently analyze the design inputs:
-- Read `design/tokens/design-tokens.json` or `Design.md`.
-- Check `design/specs/` for behavioral requirements.
-- Match all visual requirements to existing Design Tokens.
+## 🎨 Design Tokens (Tailwind CSS v4)
 
-### 2. `dev`
-Implement the code using these strict constraints:
-- **Tech Stack**: Next.js (App Router), TypeScript, Tailwind CSS v4.
-- **Tokens Only**: DO NOT use arbitrary Tailwind values (e.g., `text-[#123]`). Only use configured tokens.
-- **Modularity**: Break down complex UIs into atomic components in `src/components/ui/`.
-- **Typing**: Every component MUST have a TypeScript interface for its props.
-- **Accessibility**: Use semantic HTML tags and appropriate ARIA attributes.
+### Colors
+- **Primary**: `primary-50` to `primary-900` (Core brand blue).
+- **Neutral**: `neutral-0` (White), `neutral-50` to `neutral-900` (Grays).
+- **Semantic**:
+  - **Success**: `success-50`, `success-500`, `success-700`.
+  - **Warning**: `warning-50`, `warning-500`, `warning-700`.
+  - **Error**: `error-50`, `error-500`, `error-700`.
+  - **Info**: `info-50`, `info-500`, `info-700`.
 
-## 🎨 Token Reference
-- **Colors**: `primary-50` to `900`, `neutral-0` to `900`, `success/warning/error/info` (50, 500, 700).
-- **Spacing**: 4px scale.
-- **Radius**: `none`, `sm`, `md`, `lg`, `xl`, `full`.
+### Spacing & Radius
+- **Spacing**: 4px scale (e.g., `p-1` = 4px, `m-4` = 16px).
+- **Radius**: `rounded-md` (6px - standard), `rounded-xl` (12px - cards), `rounded-full`.
 
----
-*This file serves as a foundational mandate and takes precedence over general workflows.*
+## 🧩 Reusable Component Library
+Use these existing components before building anything new:
+- **Navigation**: `Sidebar`, `Navbar`, `Tabs`, `Breadcrumbs`, `Pagination`.
+- **Forms**: `Button`, `Input`, `SearchInput`, `Select`, `Checkbox`, `Radio`, `Switch`, `DatePicker`, `FileUpload`, `Textarea`, `Label`.
+- **Display**: `Table`, `Card`, `Badge`.
+- **Feedback**: `Alert`, `Skeleton`, `Modal`.
+
+## 🛠️ Implementation Rules
+1. **Design-to-Code**: Map all visual inputs to the tokens above.
+2. **No Arbitrary Values**: Never use `[#hex]` or `[px]`. Use token classes only.
+3. **Type Safety**: All components must have TypeScript interfaces for props.
+4. **Consistency**: Follow the industrial/minimalist aesthetic established in the mockups.
