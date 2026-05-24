@@ -135,7 +135,7 @@ export function Sidebar() {
       {/* Primary Navigation */}
       <nav className="flex-1 px-4 py-2 space-y-1">
         {navItems.map((item) => {
-          const isActive = pathname === item.href || (item.href === "/assets" && (pathname === "/" || pathname === "/preview"));
+          const isActive = pathname === item.href;
           return (
             <Link
               key={item.href}

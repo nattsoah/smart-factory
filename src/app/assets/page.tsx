@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { PageHeader } from "@/components/shared/page-header";
 import { DataTableFilter } from "@/components/shared/data-table-filter";
 import { DataTable } from "@/components/shared/data-table";
@@ -25,6 +26,7 @@ const inventoryData = [
 
 export default function MachineInventoryPage() {
   const [currentPage, setCurrentPage] = useState(1);
+  const router = useRouter();
 
   const breadcrumbItems = [
     { label: "Dashboard", href: "/dashboard" },
@@ -41,7 +43,7 @@ export default function MachineInventoryPage() {
         action={{
           label: "Add New Asset",
           icon: <PlusIcon />,
-          onClick: () => console.log("Add asset clicked"),
+          onClick: () => router.push("/form"),
         }}
       />
 
