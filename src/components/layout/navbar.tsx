@@ -4,6 +4,7 @@ import React from "react";
 import { SearchInput } from "@/components/ui/search-input";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useMobileMenu } from "./mobile-menu-context";
 
 const BellIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -30,11 +31,18 @@ const UserIcon = () => (
 );
 
 export function Navbar() {
+  const { toggle } = useMobileMenu();
+
   return (
     <header className="sticky top-0 z-30 h-16 w-full bg-neutral-0 border-b border-neutral-200 flex items-center justify-between px-4 md:px-8 backdrop-blur-md bg-opacity-95">
       {/* Left: Global Search & Mobile Toggle */}
       <div className="flex items-center gap-4 flex-1 max-w-xl">
-        <Button variant="ghost" size="icon" className="lg:hidden text-neutral-700">
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          className="lg:hidden text-neutral-700"
+          onClick={toggle}
+        >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" />
           </svg>
