@@ -14,12 +14,9 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Pagination } from "@/components/ui/pagination";
 import { cn } from "@/lib/utils";
-
-const MoreHorizontalIcon = () => (
-  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
-  </svg>
-);
+import { MoreHorizontalIcon } from "@/components/ui/icons";
+import { Card } from "@/components/ui/card";
+import { Asset } from "@/types/asset";
 
 const SortIcon = () => (
   <svg className="w-3 h-3 text-neutral-400 ml-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -27,18 +24,8 @@ const SortIcon = () => (
   </svg>
 );
 
-import { Card } from "@/components/ui/card";
-
-interface DataItem {
-  id: string;
-  name: string;
-  type: string;
-  status: string;
-  lastMaint: string;
-}
-
 interface DataTableProps {
-  data: DataItem[];
+  data: Asset[];
   totalPages?: number;
   currentPage?: number;
   onPageChange?: (page: number) => void;
