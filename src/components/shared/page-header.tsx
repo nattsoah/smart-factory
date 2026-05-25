@@ -3,9 +3,10 @@
 import React from "react";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Button } from "@/components/ui/button";
+import { BreadcrumbItem } from "@/types/shared";
 
 interface PageHeaderProps {
-  breadcrumbItems: { label: string; href?: string }[];
+  breadcrumbItems: BreadcrumbItem[];
   title: string;
   description: string;
   action?: {
